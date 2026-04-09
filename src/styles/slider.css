@@ -1,0 +1,156 @@
+/* Hero Slider Custom Styles */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-slider .slick-slide {
+  height: 100vh;
+}
+
+.slick-slider .slick-slide > div {
+  height: 100%;
+}
+
+/* Dots Navigation */
+.slick-dots {
+  position: absolute;
+  bottom: 40px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  z-index: 20;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 2px solid white;
+  outline: none;
+  background: transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slick-dots li.slick-active button {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Arrow Navigation */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: white;
+  outline: none;
+  background: rgba(235, 38, 39, 0.8);
+  border-color: white;
+}
+
+.slick-prev {
+  left: 30px;
+}
+
+.slick-next {
+  right: 30px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  opacity: 1;
+  color: white;
+}
+
+.slick-prev:before {
+  content: '←';
+}
+
+.slick-next:before {
+  content: '→';
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .slick-prev {
+    left: 15px;
+  }
+  
+  .slick-next {
+    right: 15px;
+  }
+  
+  .slick-dots {
+    bottom: 20px;
+  }
+  
+  .slick-dots li {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+  
+  .slick-dots li button {
+    width: 10px;
+    height: 10px;
+  }
+}
