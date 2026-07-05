@@ -25,7 +25,7 @@ export default function ContactForm() {
       <input type="text" name="subject" placeholder="Subject" />
       <br /><br />
 
-      <textarea name="message" placeholder="Message" required />
+      <textarea name="message" placeholder="Message" required></textarea>
       <br /><br />
 
       <button type="submit">Send Message</button>
