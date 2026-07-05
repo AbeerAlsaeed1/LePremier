@@ -1,4 +1,5 @@
 import { Header } from './components/Header';
+import ContactForm from "./components/ContactForm";
 import { DivisionCard } from './components/DivisionCard';
 import { ProjectGalleryItem } from './components/ProjectGalleryItem';
 import { Building, Factory, Shield, Music, Check, Mail, Phone, MapPin, ArrowRight, Instagram } from 'lucide-react';
@@ -2454,48 +2455,57 @@ src={projectImages[0]}
             </div>
             
             <div className="bg-gray-800 p-8 rounded-lg">
-              <form className="space-y-6">
+              <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  className="space-y-6"
+><input
+  type="hidden"
+  name="access_key"
+  value="38e0b390-6d79-4e7b-8753-a902507bfb90"
+/>
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2">{t('contact.form.name')}</label>
-                  <input 
-                    type="text" 
-                    id="name"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
-                    placeholder={t('contact.form.namePlaceholder')}
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-white mb-2">{t('contact.form.email')}</label>
-                  <input 
-                    type="email" 
-                    id="email"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
-                    placeholder={t('contact.form.emailPlaceholder')}
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-white mb-2">{t('contact.form.message')}</label>
-                  <textarea 
-                    id="message"
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
-                    placeholder={t('contact.form.messagePlaceholder')}
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit"
-                  className="w-full bg-[#eb2627] text-white py-3 rounded hover:bg-[#d42020] transition-colors"
-                >
-                  {t('contact.form.submit')}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+  <label htmlFor="name" className="block text-white mb-2">
+    {t('contact.form.name')}
+  </label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
+    placeholder={t('contact.form.namePlaceholder')}
+    required
+  />
+</div>
+
+<div>
+  <label htmlFor="email" className="block text-white mb-2">
+    {t('contact.form.email')}
+  </label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
+    placeholder={t('contact.form.emailPlaceholder')}
+    required
+  />
+</div>
+
+<div>
+  <label htmlFor="message" className="block text-white mb-2">
+    {t('contact.form.message')}
+  </label>
+  <textarea
+    id="message"
+    name="message"
+    rows={5}
+    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded text-white focus:outline-none focus:ring-2 focus:ring-[#eb2627]"
+    placeholder={t('contact.form.messagePlaceholder')}
+    required
+  ></textarea>
+</div>
+</form>
 
       <Footer />
       
