@@ -2505,7 +2505,14 @@ src={projectImages[0]}
     required
   ></textarea>
 </div>
+<button 
+  type="submit"
+  className="w-full bg-[#eb2627] text-white py-3 rounded hover:bg-[#d42020] transition-colors"
+>
+  {t('contact.form.submit')}
+</button>
 </form>
+
 
       <Footer />
       
