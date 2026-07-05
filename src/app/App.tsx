@@ -265,6 +265,22 @@ function AppContent() {
   const { t, language, isRTL } = useLanguage();
   const [selectedDivision, setSelectedDivision] = useState<string | null>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [showSuccess, setShowSuccess] = useState(false);
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+
+  const formData = new FormData(e.currentTarget);
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  if (response.ok) {
+    setShowSuccess(true);
+    e.currentTarget.reset();
+  }
+}
 
   const divisions = [
     {
@@ -2455,15 +2471,12 @@ src={projectImages[0]}
             </div>
             
             <div className="bg-gray-800 p-8 rounded-lg">
-              <form
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  className="space-y-6"
-><input
-  type="hidden"
-  name="access_key"
-  value="38e0b390-6d79-4e7b-8753-a902507bfb90"
-/>
+              <form onSubmit={handleSubmit} className="space-y-6">
+  <input
+    type="hidden"
+    name="access_key"
+    value="38e0b390-6d79-4e7b-8753-a902507bfb90"
+  />
                 <div>
   <label htmlFor="name" className="block text-white mb-2">
     {t('contact.form.name')}
@@ -2516,7 +2529,26 @@ src={projectImages[0]}
 </div>
 </div>
 </section>
+{showSuccess && (
+  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+    <div className="bg-white rounded-lg p-8 max-w-md text-center">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        Message Sent Successfully
+      </h3>
 
+      <p className="text-gray-600 mb-6">
+        Thank you for contacting Le Premier Group. We will get back to you soon.
+      </p>
+
+      <button
+        onClick={() => setShowSuccess(false)}
+        className="bg-[#eb2627] text-white px-8 py-3 rounded"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+)}
 
       <Footer />
       
