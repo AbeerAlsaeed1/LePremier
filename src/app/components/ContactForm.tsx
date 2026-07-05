@@ -5,6 +5,7 @@ export default function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    alert("form is using new code");
 
     const formData = new FormData(e.currentTarget);
 
