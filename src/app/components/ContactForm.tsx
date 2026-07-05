@@ -8,11 +8,7 @@ export default function ContactForm() {
         value="38e0b390-6d79-4e7b-8753-a902507bfb90"
       />
 
-      <input
-        type="hidden"
-        name="redirect"
-        value="https://lepremier-group.com"
-      />
+      
 
       <h2>Contact Us</h2>
 
