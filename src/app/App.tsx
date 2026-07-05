@@ -2531,7 +2531,11 @@ src={projectImages[0]}
 </section>
 {showSuccess && (
   <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-    <div className="bg-white rounded-lg p-8 max-w-md text-center">
+    <div className="bg-white rounded-lg p-8 max-w-md text-center shadow-xl">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
+        <span className="text-3xl text-green-600">✓</span>
+      </div>
+
       <h3 className="text-2xl font-bold text-gray-900 mb-4">
         Message Sent Successfully
       </h3>
@@ -2542,7 +2546,7 @@ src={projectImages[0]}
 
       <button
         onClick={() => setShowSuccess(false)}
-        className="bg-[#eb2627] text-white px-8 py-3 rounded"
+        className="bg-[#eb2627] text-white px-8 py-3 rounded hover:bg-[#d42020] transition-colors"
       >
         OK
       </button>
