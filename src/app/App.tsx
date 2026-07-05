@@ -2512,6 +2512,10 @@ src={projectImages[0]}
   {t('contact.form.submit')}
 </button>
 </form>
+</div>
+</div>
+</div>
+</section>
 
 
       <Footer />
