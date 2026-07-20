@@ -2654,20 +2654,36 @@ src={projectImages[0]}
 
 function Footer() {
   const { t } = useLanguage();
-  
+
   return (
-    <footer className="bg-black text-white py-12" style={{ fontFamily: 'Lato, sans-serif' }}>
+    <footer
+      className="bg-black text-white py-12"
+      style={{ fontFamily: 'Lato, sans-serif' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
+
           <div>
-            <h3 className="text-xl mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>{t('footer.brand')}</h3>
+            <h3
+              className="text-xl mb-4"
+              style={{ fontFamily: 'Anton, sans-serif' }}
+            >
+              {t('footer.brand')}
+            </h3>
+
             <p className="text-gray-400 leading-relaxed">
               {t('footer.tagline')}
             </p>
           </div>
-          
+
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>{t('footer.divisions.title')}</h4>
+            <h4
+              className="mb-4"
+              style={{ fontFamily: 'Anton, sans-serif' }}
+            >
+              {t('footer.divisions.title')}
+            </h4>
+
             <ul className="space-y-2 text-gray-400">
               <li>{t('footer.divisions.construction')}</li>
               <li>{t('footer.divisions.manufacturing')}</li>
@@ -2675,29 +2691,108 @@ function Footer() {
               <li>{t('footer.divisions.entertainment')}</li>
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>{t('footer.company.title')}</h4>
+            <h4
+              className="mb-4"
+              style={{ fontFamily: 'Anton, sans-serif' }}
+            >
+              {t('footer.company.title')}
+            </h4>
+
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer.company.about')}</li>
-              <li>{t('footer.company.team')}</li>
-              <li>{t('footer.company.careers')}</li>
-              <li>{t('footer.company.news')}</li>
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.company.about')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#team"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.company.team')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#careers"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.company.careers')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#news"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.company.news')}
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>{t('footer.connect.title')}</h4>
+            <h4
+              className="mb-4"
+              style={{ fontFamily: 'Anton, sans-serif' }}
+            >
+              {t('footer.connect.title')}
+            </h4>
+
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer.connect.contact')}</li>
-              <li>{t('footer.connect.linkedin')}</li>
-              <li>{t('footer.connect.twitter')}</li>
-              <li>{t('footer.connect.facebook')}</li>
-              <li>{t('footer.connect.instagram')}</li>
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.connect.contact')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                   href="https://www.linkedin.com/company/lepremiergroup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.connect.linkedin')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://x.com/lepremierksa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.connect.twitter')}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com/lepremierksa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  {t('footer.connect.instagram')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>{t('footer.copyright')}</p>
         </div>
@@ -2705,7 +2800,6 @@ function Footer() {
     </footer>
   );
 }
-
 export default function App() {
   return (
     <LanguageProvider>
