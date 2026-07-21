@@ -260,7 +260,12 @@ import premiumSchoolGallery5 from '../assets//d30f21bface95956218e66a0a6cc3f00a6
 import premiumSchoolGallery6 from '../assets//db55b603e71114233e350e36b8af0f90e3d8ea74.png';
 import premiumSchoolGallery7 from '../assets//32c35b3edc6e65b7dcd2a05f3c8962c21b7d2fa6.png';
 import premiumSchoolGallery8 from '../assets//f16027f8aac595b71d18b0e1b5cc973cc51d80e4.png';
-
+const clientLogos = Object.values(
+  import.meta.glob("../assets/clients/*.{png,jpg,jpeg,webp,svg}", {
+    eager: true,
+    import: "default",
+  })
+) as string[];
 function AppContent() {
   const { t, language, isRTL } = useLanguage();
   const [selectedDivision, setSelectedDivision] = useState<string | null>(null);
@@ -461,7 +466,7 @@ function AppContent() {
         <Header logoSrc={logoOriginal} />
         
         {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden mt-20">
+        <section className="relative h-[80vh] flex items-center justify-center overflow-hidden mt-20">
           <div className="absolute inset-0">
             <img 
               src={buildingImage}
@@ -471,7 +476,7 @@ function AppContent() {
             <div className="absolute inset-0 bg-black/60"></div>
           </div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <button 
               onClick={() => setSelectedDivision(null)}
               className="mb-8 text-white hover:text-[#eb2627] transition-colors flex items-center gap-2"
@@ -481,45 +486,27 @@ function AppContent() {
             <h1 className="text-6xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
               {language === 'en' ? 'LE PREMIER CONSTRUCTION' : 'أول تصميم للمقاولات'}
             </h1>
-            <p className="text-white text-xl max-w-3xl">
+            <p className="text-white text-2xl max-w-2xl leading-relaxed">
               {t('construction.hero.description')}
             </p>
           </div>
         </section>
 
-        {/* Mission, About, Vision */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('construction.mission.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('construction.mission.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('construction.about.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('construction.about.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('construction.vision.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('construction.vision.description')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* About Construction */}
+<section className="py-12 bg-gray-50">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2
+      className="text-4xl text-[#eb2627] mb-6"
+      style={{ fontFamily: 'Anton, sans-serif' }}
+    >
+      {language === 'en' ? 'ABOUT CONSTRUCTION' : 'عن قسم الإنشاءات'}
+    </h2>
+
+    <p className="text-lg text-gray-700 leading-8">
+      {t('construction.about.description')}
+    </p>
+  </div>
+</section>
 
         {/* Construction Services */}
         <section className="py-16 bg-white">
@@ -678,307 +665,7 @@ src={projectImages[0]}
           </div>
         </section>
 
-        {/* Clients Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="w-16 h-1 bg-[#eb2627] mx-auto mb-6"></div>
-              <h2 className="text-4xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                {t('construction.ourclients.title').toUpperCase()}
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-1 justify-items-center">
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={rajhiInvestLogoImage} 
-                  alt="Rajhi Invest" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={tbcLogoImage} 
-                  alt="TBC" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mohNewLogoImage} 
-                  alt="Ministry of Health" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={monshaatNewLogoImage} 
-                  alt="Monsha'at" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mofLogoImage} 
-                  alt="Ministry of Finance" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mofaNewLogoImage} 
-                  alt="Ministry of Foreign Affairs" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={ministrySportLogoImage} 
-                  alt="Ministry of Sport" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={royalEmbassyLogoImage} 
-                  alt="Royal Embassy" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={nhcLogoImage} 
-                  alt="National Housing Company" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={gasStatisticsLogoImage} 
-                  alt="General Authority for Statistics" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={kingFaisalHospitalLogoImage} 
-                  alt="King Faisal Specialist Hospital & Research Center" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={riyadhCareLogoImage} 
-                  alt="Riyadh Care Hospital" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={miskLogoImage} 
-                  alt="Misk Foundation" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={vocoLogoImage} 
-                  alt="Voco" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={intercontinentalHotelsLogoImage} 
-                  alt="Intercontinental Hotels & Resorts" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={tuderLogoImage} 
-                  alt="Tuder" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={bankAlbiladNewLogoImage} 
-                  alt="Bank Albilad" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={riyadBankLogoImage} 
-                  alt="Riyad Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alRajhiBankBlueLogoImage} 
-                  alt="Al Rajhi Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alinmaBankLogoImage} 
-                  alt="Alinma Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={holidayInnLogoImage} 
-                  alt="Holiday Inn & Suites" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={bestWesternLogoImage} 
-                  alt="Best Western Plus" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={staybridgeSuitesLogoImage} 
-                  alt="Staybridge Suites" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alFaisaliahLogoImage} 
-                  alt="Al Faisaliah Group" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={gascoLogoImage} 
-                  alt="GASCO" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={robertoCavalliLogoImage} 
-                  alt="Roberto Cavalli" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={zainNewLogoImage} 
-                  alt="Zain" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={sascoLogoImage} 
-                  alt="SASCO" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={unifiedLogoImage} 
-                  alt="Unified" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alkhozamaLogoImage} 
-                  alt="Alkhozama Management Company" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={architectureLogoImage} 
-                  alt="Architecture" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={colorfulLogoImage} 
-                  alt="Client Logo" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={darAlArkanLogoImage} 
-                  alt="Dar Al Arkan" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alfarisSchoolLogoImage} 
-                  alt="Al Faris International School" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={raisLogoImage} 
-                  alt="RAIS Education for Life" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={fordPerformanceLogoImage} 
-                  alt="Ford Performance" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={nissanDuarteLogoImage} 
-                  alt="Nissan of Duarte" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={hinoLogoImage} 
-                  alt="Hino" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mcdonaldsLogoImage} 
-                  alt="McDonald's" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alRomansiahLogoImage} 
-                  alt="Al Romansiah" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={danoneAlsafiLogo} 
-                  alt="Danone Alsafi" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      
 
         {/* Stats & Contact */}
         <section className="py-16 bg-gray-100">
@@ -1152,39 +839,21 @@ src={projectImages[0]}
           </div>
         </section>
 
-        {/* Mission, About, Vision */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('safety.mission.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('safety.mission.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('safety.about.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('safety.about.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('safety.vision.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('safety.vision.description')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* About Safety */}
+<section className="py-16 bg-gray-50">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2
+      className="text-3xl text-[#eb2627] mb-4"
+      style={{ fontFamily: 'Anton, sans-serif' }}
+    >
+      {t('safety.about.title').toUpperCase()}
+    </h2>
+
+    <p className="text-gray-700 leading-relaxed">
+      {t('safety.about.description')}
+    </p>
+  </div>
+</section>
 
         {/* Safety Services */}
         <section className="py-16 bg-white">
@@ -1487,39 +1156,21 @@ src={projectImages[0]}
           </div>
         </section>
 
-        {/* Mission, About, Vision */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('manufacturing.mission.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('manufacturing.mission.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('manufacturing.about.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('manufacturing.about.description')}
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                  {t('manufacturing.vision.title').toUpperCase()}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {t('manufacturing.vision.description')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+       {/* About Industrial */}
+<section className="py-16 bg-gray-50">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2
+      className="text-3xl text-[#eb2627] mb-4"
+      style={{ fontFamily: 'Anton, sans-serif' }}
+    >
+      {t('manufacturing.about.title').toUpperCase()}
+    </h2>
+
+    <p className="text-gray-700 leading-relaxed">
+      {t('manufacturing.about.description')}
+    </p>
+  </div>
+</section>
 
         {/* Industrial Services */}
         <section className="py-16 bg-white">
@@ -1638,308 +1289,6 @@ src={projectImages[0]}
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Clients */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="w-16 h-1 bg-[#eb2627] mx-auto mb-6"></div>
-              <h2 className="text-4xl text-[#eb2627] mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
-                {t('manufacturing.clients.title')}
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-1 justify-items-center">
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={rajhiInvestLogoImage} 
-                  alt="Rajhi Invest" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={tbcLogoImage} 
-                  alt="TBC" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mohNewLogoImage} 
-                  alt="Ministry of Health" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={monshaatNewLogoImage} 
-                  alt="Monsha'at" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mofLogoImage} 
-                  alt="Ministry of Finance" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mofaNewLogoImage} 
-                  alt="Ministry of Foreign Affairs" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={ministrySportLogoImage} 
-                  alt="Ministry of Sport" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={royalEmbassyLogoImage} 
-                  alt="Royal Embassy" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={nhcLogoImage} 
-                  alt="National Housing Company" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={gasStatisticsLogoImage} 
-                  alt="General Authority for Statistics" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={kingFaisalHospitalLogoImage} 
-                  alt="King Faisal Specialist Hospital & Research Center" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={riyadhCareLogoImage} 
-                  alt="Riyadh Care Hospital" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={miskLogoImage} 
-                  alt="Misk Foundation" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={vocoLogoImage} 
-                  alt="Voco" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={intercontinentalHotelsLogoImage} 
-                  alt="Intercontinental Hotels & Resorts" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={tuderLogoImage} 
-                  alt="Tuder" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={bankAlbiladNewLogoImage} 
-                  alt="Bank Albilad" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={riyadBankLogoImage} 
-                  alt="Riyad Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alRajhiBankBlueLogoImage} 
-                  alt="Al Rajhi Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alinmaBankLogoImage} 
-                  alt="Alinma Bank" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={holidayInnLogoImage} 
-                  alt="Holiday Inn & Suites" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={bestWesternLogoImage} 
-                  alt="Best Western Plus" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={staybridgeSuitesLogoImage} 
-                  alt="Staybridge Suites" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alFaisaliahLogoImage} 
-                  alt="Al Faisaliah Group" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={gascoLogoImage} 
-                  alt="GASCO" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={robertoCavalliLogoImage} 
-                  alt="Roberto Cavalli" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={zainNewLogoImage} 
-                  alt="Zain" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={sascoLogoImage} 
-                  alt="SASCO" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={unifiedLogoImage} 
-                  alt="Unified" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alkhozamaLogoImage} 
-                  alt="Alkhozama Management Company" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={architectureLogoImage} 
-                  alt="Architecture" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={colorfulLogoImage} 
-                  alt="Client Logo" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={darAlArkanLogoImage} 
-                  alt="Dar Al Arkan" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alfarisSchoolLogoImage} 
-                  alt="Al Faris International School" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={raisLogoImage} 
-                  alt="RAIS Education for Life" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={fordPerformanceLogoImage} 
-                  alt="Ford Performance" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={nissanDuarteLogoImage} 
-                  alt="Nissan of Duarte" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={hinoLogoImage} 
-                  alt="Hino" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={mcdonaldsLogoImage} 
-                  alt="McDonald's" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={alRomansiahLogoImage} 
-                  alt="Al Romansiah" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center p-2 bg-white rounded w-full h-24">
-                <img 
-                  src={danoneAlsafiLogo} 
-                  alt="Danone Alsafi" 
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
             </div>
           </div>
         </section>
@@ -2431,7 +1780,32 @@ src={projectImages[0]}
           </div>
         </div>
       </section>
+{/* Clients Section */}
+<section id="clients" className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2
+      className="text-5xl text-gray-900 mb-12 text-center"
+      style={{ fontFamily: 'Anton, sans-serif' }}
+    >
+      {language === 'en' ? 'OUR CLIENTS' : 'عملاؤنا'}
+    </h2>
 
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+      {clientLogos.map((logo, index) => (
+        <div
+          key={index}
+          className="bg-white h-28 p-4 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+        >
+         <img
+  src={logo}
+  alt={"Client " + (index + 1)}
+  className="max-w-full max-h-16 object-contain"
+/>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2685,11 +2059,42 @@ function Footer() {
             </h4>
 
             <ul className="space-y-2 text-gray-400">
-              <li>{t('footer.divisions.construction')}</li>
-              <li>{t('footer.divisions.manufacturing')}</li>
-              <li>{t('footer.divisions.safety')}</li>
-              <li>{t('footer.divisions.entertainment')}</li>
-            </ul>
+  <li>
+    <button
+      onClick={() => setSelectedDivision('construction')}
+      className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
+    >
+      {t('footer.divisions.construction')}
+    </button>
+  </li>
+
+  <li>
+    <button
+      onClick={() => setSelectedDivision('industrial')}
+      className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
+    >
+      {t('footer.divisions.manufacturing')}
+    </button>
+  </li>
+
+  <li>
+    <button
+      onClick={() => setSelectedDivision('safety')}
+      className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
+    >
+      {t('footer.divisions.safety')}
+    </button>
+  </li>
+
+  <li>
+    <button
+      onClick={() => setSelectedDivision('entertainment')}
+      className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
+    >
+      {t('footer.divisions.entertainment')}
+    </button>
+  </li>
+</ul>
           </div>
 
           <div>
@@ -2711,31 +2116,9 @@ function Footer() {
               </li>
 
               <li>
-                <a
-                  href="#team"
-                  className="hover:text-yellow-400 transition-colors cursor-pointer"
-                >
-                  {t('footer.company.team')}
-                </a>
               </li>
 
-              <li>
-                <a
-                  href="#careers"
-                  className="hover:text-yellow-400 transition-colors cursor-pointer"
-                >
-                  {t('footer.company.careers')}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#news"
-                  className="hover:text-yellow-400 transition-colors cursor-pointer"
-                >
-                  {t('footer.company.news')}
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -2759,7 +2142,7 @@ function Footer() {
 
               <li>
                 <a
-                   href="https://www.linkedin.com/company/lepremiergroup"
+                   href="https://www.linkedin.com/company/lepremiergroupgit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-yellow-400 transition-colors cursor-pointer"
