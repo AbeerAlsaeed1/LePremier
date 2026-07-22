@@ -2071,7 +2071,6 @@ src={projectImages[0]}
           </div>
         </div>
       )}
-      <Footer setSelectedDivision={setSelectedDivision} />
     </div>
   );
 }
