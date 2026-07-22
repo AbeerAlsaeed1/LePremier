@@ -134,11 +134,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Construction Page
     'construction.hero.title': 'Construction Division',
     'construction.hero.subtitle': 'Building the Future',
-    'construction.hero.description': 'Delivering world-class construction projects with precision, quality, and unwavering commitment to excellence. From residential to commercial and industrial facilities, we build the foundations of tomorrow.',
-    
+    'construction.hero.description': 'Building world-class commercial, residential, and industrial projects with precision, quality, and lasting value.',
     'construction.mission.title': 'Our Mission',
-    'construction.mission.description': 'To deliver exceptional construction solutions that exceed client expectations through innovative design, superior craftsmanship, and sustainable building practices while maintaining the highest safety standards.',
-    'construction.about.title': 'About Us',
+    'construction.mission.description': 'Le Premier Construction delivers high-quality construction solutions across commercial, residential, hospitality, and industrial sectors. With extensive experience in managing complex projects, we combine engineering expertise, skilled execution, and strict quality control to deliver exceptional results. From structural works and infrastructure to complete fit-out and finishing, our team is committed to delivering projects safely, on time, and within budget while exceeding client expectations.',
     'construction.about.description': 'Le Premier Construction brings over 20 years of expertise in delivering diverse construction projects. Our experienced team, modern equipment, and proven methodologies ensure every project is completed on time and within budget.',
     'construction.vision.title': 'Our Vision',
     'construction.vision.description': 'To be the region\'s most trusted construction partner, known for transforming architectural visions into reality through excellence, innovation, and unwavering dedication to quality.',

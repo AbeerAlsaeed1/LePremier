@@ -1752,7 +1752,55 @@ src={projectImages[0]}
           </div>
         </div>
       </section>
+{/* Mission & Vision */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    <div className="text-center mb-16">
+      <h2
+        className="text-5xl text-[#eb2627]"
+        style={{ fontFamily: 'Anton, sans-serif' }}
+      >
+        MISSION & VISION
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      <div className="bg-gray-50 border-l-4 border-[#eb2627] p-12 rounded-sm">
+        <div className="w-16 h-1 bg-[#eb2627] mb-6"></div>
+
+        <h3
+          className="text-3xl mb-6"
+          style={{ fontFamily: 'Anton, sans-serif' }}
+        >
+          OUR MISSION
+        </h3>
+
+        <p className="text-gray-600 leading-8">
+          Deliver integrated construction, industrial, safety, and entertainment solutions with exceptional quality, innovation, and long-term value.
+        </p>
+      </div>
+
+      <div className="bg-gray-50 border-l-4 border-[#eb2627] p-12 rounded-sm">
+        <div className="w-16 h-1 bg-[#eb2627] mb-6"></div>
+
+        <h3
+          className="text-3xl mb-6"
+          style={{ fontFamily: 'Anton, sans-serif' }}
+        >
+          OUR VISION
+        </h3>
+
+        <p className="text-gray-600 leading-8">
+          To become one of Saudi Arabia's leading groups, recognized for excellence, innovation, and delivering world-class turnkey solutions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
       {/* Business Divisions Section */}
       <section id="divisions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1781,31 +1829,32 @@ src={projectImages[0]}
         </div>
       </section>
 {/* Clients Section */}
-<section id="clients" className="py-20 bg-gray-50">
+<section id="clients" className="py-12 bg-gray-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
-      className="text-5xl text-gray-900 mb-12 text-center"
+      className="text-4xl text-gray-900 mb-10 text-center"
       style={{ fontFamily: 'Anton, sans-serif' }}
     >
       {language === 'en' ? 'OUR CLIENTS' : 'عملاؤنا'}
     </h2>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-10">
       {clientLogos.map((logo, index) => (
         <div
           key={index}
-          className="bg-white h-28 p-4 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+          className="w-full h-28 bg-white rounded-xl shadow-md border border-gray-200 p-5 flex items-center justify-center hover:shadow-lg transition-all duration-300"
         >
-         <img
-  src={logo}
-  alt={"Client " + (index + 1)}
-  className="max-w-full max-h-16 object-contain"
-/>
+          <img
+            src={logo}
+            alt={"Client " + (index + 1)}
+            className="max-w-full max-h-20 object-contain"
+          />
         </div>
       ))}
     </div>
   </div>
 </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1928,7 +1977,7 @@ src={projectImages[0]}
   </div>
 )}
 
-      <Footer />
+      <Footer setSelectedDivision={setSelectedDivision} />
       
       {/* Project Detail Modal */}
       {selectedProject && (
@@ -2022,11 +2071,16 @@ src={projectImages[0]}
           </div>
         </div>
       )}
+      <Footer setSelectedDivision={setSelectedDivision} />
     </div>
   );
 }
 
-function Footer() {
+function Footer({
+  setSelectedDivision,
+}: {
+  setSelectedDivision: (division: string) => void;
+}) {
   const { t } = useLanguage();
 
   return (
@@ -2061,7 +2115,10 @@ function Footer() {
             <ul className="space-y-2 text-gray-400">
   <li>
     <button
-      onClick={() => setSelectedDivision('construction')}
+      onClick={() => {
+  setSelectedDivision('construction');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
       {t('footer.divisions.construction')}
@@ -2070,7 +2127,10 @@ function Footer() {
 
   <li>
     <button
-      onClick={() => setSelectedDivision('industrial')}
+      onClick={() => {
+  setSelectedDivision('industrial');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
       {t('footer.divisions.manufacturing')}
@@ -2079,7 +2139,10 @@ function Footer() {
 
   <li>
     <button
-      onClick={() => setSelectedDivision('safety')}
+      onClick={() => {
+  setSelectedDivision('safety');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
       {t('footer.divisions.safety')}
@@ -2088,7 +2151,10 @@ function Footer() {
 
   <li>
     <button
-      onClick={() => setSelectedDivision('entertainment')}
+      onClick={() => {
+  setSelectedDivision('entertainment');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
       {t('footer.divisions.entertainment')}
