@@ -674,11 +674,11 @@ src={projectImages[0]}
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>200+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>200+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Satisfied Clients</div>
                 </div>
                 <div className="text-center">
@@ -709,7 +709,7 @@ src={projectImages[0]}
           </div>
         </section>
 
-        <Footer />
+        <Footer setSelectedDivision={setSelectedDivision} />
         
         {/* Project Detail Modal */}
         {selectedProject && (
@@ -991,11 +991,11 @@ src={projectImages[0]}
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>300+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Systems Installed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>300+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Satisfied Clients</div>
                 </div>
                 <div className="text-center">
@@ -1026,7 +1026,7 @@ src={projectImages[0]}
           </div>
         </section>
 
-        <Footer />
+        <Footer setSelectedDivision={setSelectedDivision} />
         
         {/* Project Detail Modal */}
         {selectedProject && (
@@ -1300,15 +1300,15 @@ src={projectImages[0]}
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>50+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>50+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Satisfied Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>4+</div>
+                  <div className="text-6xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>20+</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -1335,7 +1335,7 @@ src={projectImages[0]}
           </div>
         </section>
 
-        <Footer />
+        <Footer setSelectedDivision={setSelectedDivision} />
         
         {/* Project Detail Modal */}
         {selectedProject && (
@@ -1649,7 +1649,7 @@ src={projectImages[0]}
           </div>
         </section>
 
-        <Footer />
+        <Footer setSelectedDivision={setSelectedDivision} />
       </div>
     );
   }
@@ -1729,7 +1729,7 @@ src={projectImages[0]}
                   <div className="text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                  <div className="text-5xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>500+</div>
+                  <div className="text-5xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center p-6 bg-white rounded-lg shadow-md">
@@ -1737,7 +1737,7 @@ src={projectImages[0]}
                   <div className="text-gray-600">Business Divisions</div>
                 </div>
                 <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                  <div className="text-5xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>500+</div>
+                  <div className="text-5xl text-[#eb2627] mb-2" style={{ fontFamily: 'Anton, sans-serif' }}>100+</div>
                   <div className="text-gray-600">Satisfied Clients</div>
                 </div>
               </div>
@@ -1761,7 +1761,7 @@ src={projectImages[0]}
         className="text-5xl text-[#eb2627]"
         style={{ fontFamily: 'Anton, sans-serif' }}
       >
-        MISSION & VISION
+        {t('home.missionvision.title')}
       </h2>
     </div>
 
@@ -1774,11 +1774,11 @@ src={projectImages[0]}
           className="text-3xl mb-6"
           style={{ fontFamily: 'Anton, sans-serif' }}
         >
-          OUR MISSION
+          {t('home.mission.title')}
         </h3>
 
         <p className="text-gray-600 leading-8">
-          Deliver integrated construction, industrial, safety, and entertainment solutions with exceptional quality, innovation, and long-term value.
+          {t('home.mission.description')}
         </p>
       </div>
 
@@ -1789,11 +1789,11 @@ src={projectImages[0]}
           className="text-3xl mb-6"
           style={{ fontFamily: 'Anton, sans-serif' }}
         >
-          OUR VISION
+          {t('home.vision.title')}
         </h3>
 
         <p className="text-gray-600 leading-8">
-          To become one of Saudi Arabia's leading groups, recognized for excellence, innovation, and delivering world-class turnkey solutions.
+          {t('home.vision.description')}
         </p>
       </div>
 
@@ -2116,7 +2116,13 @@ function Footer({
     <button
       onClick={() => {
   setSelectedDivision('construction');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, 100);
 }}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
@@ -2128,7 +2134,13 @@ function Footer({
     <button
       onClick={() => {
   setSelectedDivision('industrial');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, 100);
 }}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
@@ -2140,7 +2152,13 @@ function Footer({
     <button
       onClick={() => {
   setSelectedDivision('safety');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, 100);
 }}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >
@@ -2152,7 +2170,13 @@ function Footer({
     <button
       onClick={() => {
   setSelectedDivision('entertainment');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, 100);
 }}
       className="hover:text-yellow-400 transition-colors cursor-pointer text-left"
     >

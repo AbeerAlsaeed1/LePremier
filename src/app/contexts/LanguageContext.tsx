@@ -94,7 +94,11 @@ const translations: Record<Language, Record<string, string>> = {
     'about.subtitle': 'Over Two Decades of Trusted Excellence',
     'about.p1': 'Since our inception, Le Premier Group has been at the forefront of innovation and excellence across multiple industries. Our diverse portfolio spans construction, industrial manufacturing, safety and fire protection, and entertainment sectors.',
     'about.p2': 'With a commitment to quality, integrity, and customer satisfaction, we have successfully delivered hundreds of projects, earning the trust of clients worldwide. Our multidisciplinary approach enables us to provide comprehensive solutions that drive success.',
-    
+    'home.missionvision.title': 'MISSION & VISION',
+'home.mission.title': 'OUR MISSION',
+'home.mission.description': 'Deliver integrated construction, industrial, safety, and entertainment solutions with exceptional quality, innovation, and long-term value.',
+'home.vision.title': 'OUR VISION',
+'home.vision.description': "To become one of Saudi Arabia's leading groups, recognized for excellence, innovation, and delivering world-class turnkey solutions.",
     // Contact Section
     'contact.title': 'GET IN TOUCH',
     'contact.description': 'Ready to start your next project? Contact us today and discover how Le Premier Group can help you achieve your business goals.',
@@ -228,13 +232,12 @@ const translations: Record<Language, Record<string, string>> = {
     'manufacturing.hero.subtitle': 'Precision Engineering & Quality Production',
     'manufacturing.hero.description': 'Advanced manufacturing solutions delivering high-quality products for diverse industrial applications.',
     'manufacturing.hero.industrial.title': 'LE PREMIER INDUSTRIAL',
-    'manufacturing.hero.industrial.description': 'Le Premier Industrial specializes in advanced steel structure fabrication, aluminum extrusion, and roll forming services. With over 20 years of combined expertise and innovative processes, we meet the needs of every project with efficiency and quality as our top priorities.',
-    
+    'manufacturing.hero.industrial.description': 'Advanced industrial manufacturing, steel fabrication, and aluminum solutions engineered for quality and performance.',
     'manufacturing.mission.title': 'Our Mission',
     'manufacturing.mission.description': 'Our mission is to deliver superior industrial manufacturing solutions through innovation, precision engineering, and unwavering commitment to quality. We aim to exceed client expectations while maintaining sustainable and ethical business practices.',
     
     'manufacturing.about.title': 'About Us',
-    'manufacturing.about.description': 'With advanced facilities and a highly skilled workforce, we offer comprehensive manufacturing services that include steel forming, aluminum casting, and specialized industrial solutions for various sectors.',
+    'manufacturing.about.description': 'Le Premier Industrial Manufacturing provides advanced fabrication and manufacturing solutions tailored to modern construction and infrastructure projects. Our production capabilities include structural steel, aluminum systems, architectural metal works, decorative elements, and custom fabrication. Using modern equipment and experienced professionals, we maintain the highest standards of precision, durability, and quality to support projects of every scale.',
     
     'manufacturing.vision.title': 'Our Vision',
     'manufacturing.vision.description': 'To be the region\'s leading industrial manufacturer recognized for excellence, innovation, and reliability in every project we undertake, setting new standards in the industry.',
@@ -325,7 +328,7 @@ const translations: Record<Language, Record<string, string>> = {
     'safety.mission.description': 'To deliver comprehensive safety and fire protection solutions that ensure the protection of lives and property through cutting-edge technology, specialized expertise, and unwavering commitment to excellence in safety standards.',
     
     'safety.about.title': 'About Us',
-    'safety.about.description': 'Le Premier Safety & Fire Protection specializes in the design, installation, and maintenance of advanced fire protection systems. Our team of certified professionals ensures compliance with the highest international safety standards.',
+    'safety.about.description': 'Le Premier Safety & Fire Protection delivers integrated fire protection and life safety solutions for commercial, residential, hospitality, and industrial developments. Our services include fire alarm systems, sprinkler systems, hydrants, fire suppression systems, emergency lighting, and low-current solutions. Every system is designed, installed, and maintained in accordance with international standards, ensuring maximum safety, reliability, and long-term performance for every project.',
     
     'safety.vision.title': 'Our Vision',
     'safety.vision.description': 'To be the region\'s most trusted safety partner, setting new standards in fire protection through innovation, reliability, and proactive safety management.',
@@ -390,11 +393,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Entertainment Page
     'entertainment.hero.title': 'Entertainment Division',
     'entertainment.hero.subtitle': 'Creating Unforgettable Experiences',
-    'entertainment.hero.description': 'From event management to entertainment venues, we bring joy and excitement to every occasion.',
+    'entertainment.hero.description': 'Premium equestrian facilities and lifestyle experiences where passion meets excellence.',
     
     'entertainment.about.title': 'About KAB Entertainment',
-    'entertainment.about.p1': 'KAB Entertainment is the newest division of Le Premier Group, created to develop premium lifestyle and recreational destinations. Built on the Group\'s legacy of quality, professionalism, and long-term vision, this division marks Le Premier\'s strategic expansion into the entertainment and leisure sector.',
-    'entertainment.about.p2': 'KAB Entertainment focuses on creating premium, high-quality experiences that combine modern facilities, thoughtful design, and professional management. Launching with an exclusive equestrian center, this division reflects the Group\'s commitment to excellence and establishes a strong foundation for future projects in entertainment and lifestyle.',
+    'entertainment.about.p1': 'KAB Entertainment is Le Premier Group’s dedicated entertainment division, offering premium equestrian facilities and unique lifestyle experiences designed for individuals, families, and the community.',
+    'entertainment.about.p2': 'Through KAB Equestrian Center, we provide professional riding programs, horse boarding, competitions, and community events in a modern environment that reflects our commitment to excellence, safety, and unforgettable experiences.',
     
     'entertainment.kab.title': 'KAB Equestrian Center',
     'entertainment.kab.subtitle': 'A Premium Equestrian Lifestyle Destination',
@@ -508,6 +511,13 @@ const translations: Record<Language, Record<string, string>> = {
     'about.subtitle': 'أكثر من عقدين من التميز الموثوق به',
     'about.p1': 'منذ تأسيسنا، كانت مجموعة أول تصميم في طليع الابتكار والتميّز عبر العديد من القطاعات. تمتد محفظتنا المتنوعة لتشمل مالات الإنشاءات، والتصنيع الصناعي، للسلامة و الحماية من الحرائق، وقطاع الترفيه.',
     'about.p2': 'وبفضل التزامنا بالجودة والنزاهة ورضا العملاء، نجحنا في تنفيذ مئات المشاريع، مما أكسبنا ثقة العملاء حول العالم. ويُمكّننا نهجنا متعدد التخصصات من تقديم حلول متكاملة تسهم في تحقيق النجاح.',
+    
+// Home Mission & Vision
+'home.missionvision.title': 'الرؤية والرسالة',
+'home.mission.title': 'رسالتنا',
+'home.mission.description': 'تقديم حلول متكاملة في الإنشاءات والتصنيع والسلامة والترفيه بأعلى معايير الجودة والابتكار والقيمة طويلة الأمد.',
+'home.vision.title': 'رؤيتنا',
+'home.vision.description': 'أن نكون إحدى المجموعات الرائدة في المملكة العربية السعودية، والمعروفة بالتميز والابتكار وتقديم حلول متكاملة عالمية المستوى.',
     
     // Contact Section
     'contact.title': 'تواصل معنا',
