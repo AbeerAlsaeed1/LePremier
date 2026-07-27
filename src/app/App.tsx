@@ -1732,7 +1732,7 @@ src={projectImages[0]}
 </button>
           </div>
           
-          <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="relative z-10 h-full flex items-center justify-center pt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl text-[#eb2627] mb-6" style={{ fontFamily: 'Anton, sans-serif', letterSpacing: '2px' }}>
                 {language === 'en' ? (
