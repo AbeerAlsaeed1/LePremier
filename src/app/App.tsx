@@ -2292,11 +2292,10 @@ function Footer({
 
               <li>
                 <a
-                   href="https://www.linkedin.com/company/lepremiergroupgit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-yellow-400 transition-colors cursor-pointer"
-                >
+  href="https://sa.linkedin.com/company/lepremiergroup"
+  target="_blank"
+  rel="noopener noreferrer"
+>
                   {t('footer.connect.linkedin')}
                 </a>
               </li>
@@ -2314,11 +2313,10 @@ function Footer({
 
               <li>
                 <a
-                  href="https://www.instagram.com/lepremierksa/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-yellow-400 transition-colors cursor-pointer"
-                >
+  href="https://www.instagram.com/lepremierksa/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
                   {t('footer.connect.instagram')}
                 </a>
               </li>
