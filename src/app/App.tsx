@@ -30,6 +30,18 @@ import heroSlideSystems from '../assets//8636b8c4108cc54df02b5dc426afa9e765724fc
 import heroSlideProgress from '../assets//5b80b6504fe9e3fc2be82b584823aafa12cff7b3.png';
 import heroSlideCertificate from '../assets//3e989f74e7e5633ac76680ea5bd2800618a87643.png';
 import heroBackground from '../assets//03ce6031a31f1edcda84fe68880f5744a2921d24.png';
+import project1 from '../assets/project1.jpeg';
+import project2 from '../assets/project2.jpeg';
+import project3 from '../assets/project3.jpeg';
+import project4 from '../assets/project4.png';
+import project5 from '../assets/project5.png';
+import project6 from '../assets/project6.png';
+import project7 from '../assets/project7.jpeg';
+import project8 from '../assets/project8.png';
+import project9 from '../assets/project9.png';
+import project10 from '../assets/project10.png';
+import project11 from '../assets/project11.png';
+import project12 from '../assets/project12.png';
 import heroSlideConstruction1 from '../assets//b1445c24490d1861dadc2bb8b6478ae798a6a053.png';
 import heroSlideConstruction2 from '../assets//9ef9fc6540362a80bf9e6e6e0553581f98c75eb7.png';
 import heroSlideConstruction3 from '../assets//150036d3308db24e6fed4845fad54460e404d285.png';
@@ -271,6 +283,42 @@ function AppContent() {
   const [selectedDivision, setSelectedDivision] = useState<string | null>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const heroImages = [
+  heroBackground,
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
+  project8,
+  project9,
+  project10,
+  project11,
+  project12,
+];
+
+const [currentHero, setCurrentHero] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentHero((prev) => (prev + 1) % heroImages.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
+const previousHero = () => {
+  setCurrentHero((prev) =>
+    prev === 0 ? heroImages.length - 1 : prev - 1
+  );
+};
+
+const nextHero = () => {
+  setCurrentHero((prev) =>
+    (prev + 1) % heroImages.length
+  );
+};
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
@@ -1664,16 +1712,29 @@ src={projectImages[0]}
         <div className="relative h-screen">
           <div className="absolute inset-0">
             <img 
-              src={heroBackground}
+              src={heroImages[currentHero]}
               alt="Corporate Building"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-white/70"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
+            <button
+  onClick={previousHero}
+  className="absolute left-6 top-1/2 -translate-y-1/2 z-20 text-[#eb2627] hover:text-[#d42020] text-6xl"
+>
+  ‹
+</button>
+
+<button
+  onClick={nextHero}
+  className="absolute right-6 top-1/2 -translate-y-1/2 z-20 text-[#eb2627] hover:text-[#d42020] text-6xl"
+>
+  ›
+</button>
           </div>
           
           <div className="relative z-10 h-full flex items-center justify-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl text-[#eb2627] mb-6" style={{ fontFamily: 'Anton, sans-serif', letterSpacing: '2px' }}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl text-[#eb2627] mb-6" style={{ fontFamily: 'Anton, sans-serif', letterSpacing: '2px' }}>
                 {language === 'en' ? (
                   <>
                     BUILDING TOMORROW'S
@@ -1686,7 +1747,7 @@ src={projectImages[0]}
                   </>
                 )}
               </h1>
-              <p className="text-xl sm:text-2xl text-[#eb2627] mb-10 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-[#eb2627] mb-10 max-w-3xl mx-auto">
                 {t('hero.main.description')}
               </p>
               <button 
