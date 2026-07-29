@@ -547,7 +547,7 @@ const nextHero = () => {
       className="text-4xl text-[#eb2627] mb-6"
       style={{ fontFamily: 'Anton, sans-serif' }}
     >
-      {language === 'en' ? 'ABOUT CONSTRUCTION' : 'عن قسم الإنشاءات'}
+      {language === 'en' ? 'LE PREMIER CONSTRUCTION' : 'لي بريميير للمقاولات'}
     </h2>
 
     <p className="text-lg text-gray-700 leading-8">
@@ -560,7 +560,9 @@ const nextHero = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl text-[#eb2627] mb-12 text-center" style={{ fontFamily: 'Anton, sans-serif' }}>
-              {t('construction.serviceslist.title').toUpperCase()}
+              {language === 'en'
+  ? 'OUR CONSTRUCTION SERVICES'
+  : 'خدمات المقاولات'}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -894,7 +896,9 @@ src={projectImages[0]}
       className="text-3xl text-[#eb2627] mb-4"
       style={{ fontFamily: 'Anton, sans-serif' }}
     >
-      {t('safety.about.title').toUpperCase()}
+      {language === 'en'
+  ? 'LE PREMIER SAFETY & FIRE PROTECTION'
+  : 'لي بريميير للسلامة والحماية من الحريق'}
     </h2>
 
     <p className="text-gray-700 leading-relaxed">
@@ -907,7 +911,9 @@ src={projectImages[0]}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl text-[#eb2627] mb-12 text-center" style={{ fontFamily: 'Anton, sans-serif' }}>
-              {t('safety.services.title').toUpperCase()}
+              {language === 'en'
+  ? 'OUR SAFETY & FIRE PROTECTION SERVICES'
+  : 'خدماتنا للسلامة والحماية من الحريق'}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -1211,7 +1217,9 @@ src={projectImages[0]}
       className="text-3xl text-[#eb2627] mb-4"
       style={{ fontFamily: 'Anton, sans-serif' }}
     >
-      {t('manufacturing.about.title').toUpperCase()}
+      {language === 'en'
+  ? 'LE PREMIER INDUSTRIAL'
+  : 'لي بريميير للصناعة'}
     </h2>
 
     <p className="text-gray-700 leading-relaxed">
@@ -1224,7 +1232,9 @@ src={projectImages[0]}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl text-[#eb2627] mb-12 text-center" style={{ fontFamily: 'Anton, sans-serif' }}>
-              {t('manufacturing.industrial.title')}
+              {language === 'en'
+  ? 'OUR INDUSTRIAL SERVICES'
+  : 'خدماتنا الصناعية'}
             </h2>
             
             {/* Grid of Service Categories */}
@@ -1497,7 +1507,7 @@ src={projectImages[0]}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
           </div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left">
             <button 
               onClick={() => setSelectedDivision(null)}
               className="mb-8 text-white hover:text-[#eb2627] transition-colors flex items-center gap-2 mx-auto"
@@ -1507,8 +1517,10 @@ src={projectImages[0]}
             <h1 className="text-6xl text-white mb-4" style={{ fontFamily: 'Anton, sans-serif' }}>
               {language === 'en' ? 'LE PREMIER ENTERTAINMENT' : 'أول تصميم للترفيه'}
             </h1>
-            <p className="text-white text-2xl max-w-3xl mx-auto">
-              {language === 'en' ? 'Where Lifestyle Meets Excellence' : 'حيث يلتقي أسلوب الحياة بالتميّز'}
+            <p className="text-white text-xl max-w-3xl text-left">
+              {language === 'en'
+  ? 'Where Passion Meets Excellence'
+  : 'حيث يلتقي الشغف بالتميّز'}
             </p>
           </div>
         </section>
@@ -1678,22 +1690,32 @@ src={projectImages[0]}
               {language === 'en' ? 'For inquiries, memberships, or service information, please contact us to learn more about Kab Equestrian Center.' : 'للاستفسارات أو العضويات أو معلومات الخدمة، يُرجى الاتصال بنا لمعرفة المزيد عن مركز KAB للفروسية.'}
             </p>
             <div className="flex flex-wrap gap-6 justify-center mb-8">
-              <div className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded">
-                <Phone className="w-5 h-5" />
-                <span dir="ltr">+966 55 450 8692</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded">
-                <Instagram className="w-5 h-5" />
-                <span>@kabacademy_</span>
-              </div>
+            <a
+  href="tel:+966554508692"
+  className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded hover:bg-white/20 transition"
+>
+  <Phone className="w-5 h-5" />
+  <span dir="ltr">+966 55 450 8692</span>
+</a>
+              <a
+  href="https://www.instagram.com/kabacademy_/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded hover:bg-white/20 transition"
+>
+  <Instagram className="w-5 h-5" />
+  <span>@kabacademy_</span>
+</a>
             </div>
-            <button 
-              onClick={() => setSelectedDivision(null)}
-              className="bg-white text-[#eb2627] px-8 py-4 rounded text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
-            >
-              Contact Us
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <a
+  href="https://www.instagram.com/kabacademy_/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white text-[#eb2627] px-8 py-4 rounded text-lg hover:bg-gray-100 transition inline-flex items-center gap-2"
+>
+  Contact Us
+  <ArrowRight className="w-5 h-5" />
+</a>
           </div>
         </section>
 
@@ -1885,7 +1907,16 @@ src={projectImages[0]}
                 description={division.description}
                 icon={division.icon}
                 image={division.image}
-                onClick={() => setSelectedDivision(division.id)}
+                onClick={() => {
+  setSelectedDivision(division.id);
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, 100);
+}}
                 logo={division.logo}
               />
             ))}
