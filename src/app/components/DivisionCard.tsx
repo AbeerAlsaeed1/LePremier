@@ -40,6 +40,11 @@ export function DivisionCard({ title, description, icon: Icon, image, onClick, l
         <p className="text-gray-200 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
           {description}
         </p>
+        <div className="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300">
+  <span className="text-3xl text-white group-hover:translate-x-2 transition-transform duration-300">
+    →
+  </span>
+</div>
       </div>
     </div>
   );

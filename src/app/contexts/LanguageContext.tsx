@@ -92,11 +92,15 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.title': 'About Le Premier Group',
     'about.subtitle': 'Over Two Decades of Trusted Excellence',
-    'about.p1': 'Since our inception, Le Premier Group has been at the forefront of innovation and excellence across multiple industries. Our diverse portfolio spans construction, industrial manufacturing, safety and fire protection, and entertainment sectors.',
-    'about.p2': 'With a commitment to quality, integrity, and customer satisfaction, we have successfully delivered hundreds of projects, earning the trust of clients worldwide. Our multidisciplinary approach enables us to provide comprehensive solutions that drive success.',
-    'home.missionvision.title': 'MISSION & VISION',
+    'about.p1': 'For over two decades, Le Premier Group has been delivering excellence across construction, industrial manufacturing, safety & fire protection, and entertainment. Our diverse portfolio reflects a commitment to innovation, quality, and integrity, enabling us to provide integrated turnkey solutions tailored to every project.',
+    'about.p2': 'Through trusted partnerships and a multidisciplinary approach, we have successfully delivered hundreds of projects, creating lasting value for our clients while maintaining the highest standards of quality, safety, and performance.',
+
+'home.missionvision.title': 'MISSION & VISION',
+
 'home.mission.title': 'OUR MISSION',
+
 'home.mission.description': 'Deliver integrated construction, industrial, safety, and entertainment solutions with exceptional quality, innovation, and long-term value.',
+
 'home.vision.title': 'OUR VISION',
 'home.vision.description': "To become one of Saudi Arabia's leading groups, recognized for excellence, innovation, and delivering world-class turnkey solutions.",
     // Contact Section
