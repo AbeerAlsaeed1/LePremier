@@ -70,6 +70,12 @@ import tbcGallery1 from '../assets//dc4bf43d9d61a0ab42ed747ba43eae611e141399.png
 import tbcGallery2 from '../assets//f863e2a3748a320d4ff2533855fd704567781d68.png';
 import tbcGallery3 from '../assets//3631328728d5e08662d69b525db37c69b2ad70fd.png';
 import alYarmookSchoolImage from '../assets//718f890341e1181a6b4c59f3ed71a4bc2d677124.png';
+import Gems1 from '../assets/Gems1.png';
+import Gems2 from '../assets/Gems2.png';
+import Gems3 from '../assets/Gems3.png';
+import Gems4 from '../assets/Gems4.jpeg';
+import Gems5 from '../assets/Gems5.png';
+import Gems6 from '../assets/Gems6.jpeg';
 import vocoImage from '../assets//21c5d6d57f54df0a185d1a83e98ebed8a863b622.png';
 import alRaedImage from '../assets//cc1d71c006cdfec4a64671caf3c7ac766713ed03.png';
 import clientsImage from '../assets//b2b513fc45c4e22756e9c12203d7da0d10c175ba.png';
@@ -602,7 +608,25 @@ const nextHero = () => {
                 { name: t('projects.shaqra'), location: 'Riyadh-Shaqra industrial city', owner: 'Awal tasmim industrial', sector: 'Industrial', status: 'Under Progress', year: '2025-2026', image: shaqraFactoryImage, description: 'Shaqra Factory is one of our strategic industrial developments currently under construction in Riyadh – Shaqra Industrial City. This project reflects our company\'s commitment to expanding our industrial capabilities and delivering high-quality construction standards. The development showcases our expertise in executing large-scale industrial facilities with a strong focus on efficiency, safety, and operational excellence.' },
                 { name: t('projects.therock'), location: 'Riyadh Hitten', owner: 'Mr.Adel AlNamlah', sector: 'Commercial & Offices', status: 'Under Progress', year: '2025-2026', image: theRockImage, description: 'The Rock is an ongoing commercial and office construction project located in Hittin, Riyadh. The project reflects our commitment to quality workmanship, efficient project management, and timely delivery. Construction is currently in progress, with work advancing according to schedule.' },
                 { name: t('projects.bestwaha'), location: 'Riyadh', owner: 'SASCO', sector: 'Hospitality', status: 'Under progress', year: '2024-2025', image: bestWesternWahaImage, description: 'The Best Western PLUS Al-Waha Hotel is a 4-star hospitality project in Riyadh currently under construction for SASCO. This development highlights our expertise in delivering high-quality hotel projects, with a strong focus on precision, safety, and exceptional execution standards. Our team is committed to achieving superior workmanship while ensuring timely delivery in line with international hospitality requirements.' },
-                { name: t('projects.alyarmook'), location: 'Riyadh', owner: '', sector: 'Education', status: 'Under Progress', year: '2026', image: alYarmookSchoolImage },
+                {
+  name: t('projects.alyarmook'),
+  location: 'Riyadh',
+  owner: 'GEDU International',
+  sector: 'Education',
+  status: 'Under Progress',
+  year: '2026',
+  image: alYarmookSchoolImage,
+  images: [
+  alYarmookSchoolImage,
+  Gems1,
+  Gems2,
+  Gems3,
+  Gems4,
+  Gems5,
+  Gems6,
+],
+  description: 'Le Premier is delivering the Gems British International School as a turnkey educational development in Riyadh.'
+},
                 { name: t('projects.premium'), location: 'Riyadh', owner: 'Misk Foundation', sector: 'Education', status: 'Completed', year: '2024-2025', image: premiumSchoolImage, description: 'Premium Private Al Riyadh Schools is a completed educational development delivered for Misk Foundation in Riyadh. This project reflects our company\'s ability to successfully execute high-quality institutional buildings, meeting the highest standards of construction, safety, and functionality. The successful completion of this project demonstrates our commitment to excellence, precision, and on-time delivery for impactful community developments.', video: 'https://www.instagram.com/reel/DRrVZ0ZCJAy/?igsh=MTl6OW56Yzd0ajR2cw==' },
                 { name: t('projects.alinma'), location: 'Riyadh', owner: 'Alinma bank', sector: 'Banks', status: 'Completed', year: '2024-2025', image: alinmaBankImage, description: 'We proudly delivered the Alinma Bank project in Riyadh, showcasing our commitment to quality, precision, and modern construction standards. The result is a functional and visually distinctive facility completed on time and to the highest standards.' },
                 { name: t('projects.intercontinental'), location: 'Riyadh', owner: 'IHG Hotels & Resorts', sector: 'Hospitality', status: 'Completed', year: '2023', image: intercontinentalImage, description: 'We successfully delivered the renovation of the Intercontinental IHG Hotel in Riyadh, upgrading interiors and facilities to enhance guest experience while meeting the highest standards of quality and finishing.' },
